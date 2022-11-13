@@ -41,3 +41,17 @@ def hangman():
             print(f"You have {lives} lives remaining")
 
         used_letters.add(guess)
+
+    if len(letters_in_word) == 0:
+        print(f"\nYou guess the secret word {word}")
+    else:
+        print(f"You've lost the game!")
+        print(f"Your secret word was {word}")
+
+        try_again = input("\nDo you want to try again with a new word?"
+                          "\n            (Y) for YES"
+                          "\n            (N) for NO"
+                          "\nYour choice: ").upper()
+
+        if try_again == "Y":
+            hangman()
