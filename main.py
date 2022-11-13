@@ -28,3 +28,16 @@ def hangman():
         print(f"You used these letters: {' '.join(used_letters)}")
         
         guess = input("Make your guess here: ").upper()
+
+        if guess in letters_in_word:
+            letters_in_word.remove(guess)
+
+        elif guess in used_letters:
+            print(f"\nYou already used letter {guess}")
+
+        elif guess not in word:
+            lives -= 1
+            print(f"\nYour letter {guess} not in word")
+            print(f"You have {lives} lives remaining")
+
+        used_letters.add(guess)
