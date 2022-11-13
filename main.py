@@ -55,3 +55,6 @@ def hangman():
 
         if try_again == "Y":
             hangman()
+
+
+hangman()
