@@ -10,3 +10,13 @@ def valid_words():
         random_word = random.choice(words)
 
     return random_word.upper()
+
+
+def hangman():
+
+    word = valid_words()
+    letters_in_word = set(word)
+    used_letters = set()
+    lives = 6
+
+    while len(letters_in_word) > 0 and lives > 0:
